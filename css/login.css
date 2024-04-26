@@ -1,3 +1,22 @@
 body {
-    background-color: rgb(69, 105, 136);
+    /* background: linear-gradient(to bottom, #0455BF, #D99441); */
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.container {
+    margin-top: 15%;
+    background-color: rgb(126, 155, 180);
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+input, label {
+    margin: 5px
+}
+
+a {
+    margin-left: 5px;
 }
