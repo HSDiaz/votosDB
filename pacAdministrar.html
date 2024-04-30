@@ -11,20 +11,28 @@
     <div class="container text-center">
 
         <form id="formRegister">
-            <h1>Crear cuenta</h1>
-                <label for="InputUserName">Nombre</label> <br>
+            <h1>Crear cuenta de coordinador</h1>
+                <label for="InputUserName">Nombre Completo</label> <br>
                 <input type="text" class="form-control" name="inputName" id="inputName"> <br>
     
-                <label for="InputUserName">Usuario</label> <br>
+                <label for="InputUserName">Cédula</label> <br>
                 <input type="text" class="form-control" name="InputUserName" id="InputUserName" ><br>
     
-                <label for="inputPassword">Contraseña</label><br>
-                <input type="password" class="form-control" name="inputPassword" id="inputPassword" ><br>
+                <label for="InputTelefono">Telefono</label><br>
+                <input type="text" class="form-control" name="InputTelefono" id="InputTelefono" ><br>
     
-                <label for="inputPasswordConfirmed">Confirme su contraseña</label><br>
-                <input type="password" class="form-control" name="inputPasswordConfirmed" id="inputPasswordConfirmed" ><br>
-    
-            <button type="submit" class="btn btn-primary m-2">Registrarse</button>
+                <label for="inputProvincia">Provincia</label><br>
+                <select type="select" class="form-control" name="inputProvincia" id="inputProvincia">
+                    <option value="SantoDomingo">Santo Domingo</option>
+                    <option value="">...</option>
+                    <option value="">...</option>
+                    <option value="">...</option>
+                    <option value="">...</option>
+                    <option value="">...</option>
+                    <option value="">...</option>
+                    <option value="">...</option>
+                </select>
+            <button type="submit" class="btn btn-primary m-2">Registrar</button>
         </form>
     
         <a href="login.html" class="btn btn-danger">Regresar</a>
