@@ -1,22 +1,61 @@
 body {
-    /* background: linear-gradient(to bottom, #0455BF, #D99441); */
-    box-sizing: border-box;
-    justify-content: center;
+	background-color: #f0f0f0;
 }
 
-.container {
-    margin-top: 5px;
-    background-color: rgb(126, 155, 180);
-    margin: auto;
-    margin-top: 10%;
-    border-radius: 5px;
-    padding: 5px;
+.login-box {
+	width: 350px;
+	padding: 30px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin: 50px auto;
 }
 
-input, label {
-    margin: 5px
+h2 {
+	margin-top: 0;
 }
 
-a {
-    margin-left: 5px;
+.user-box {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.user-box input {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.user-box label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	font-size: 16px;
+	color: #aaa;
+}
+
+.user-box input:focus + label {
+	color: #333;
+}
+
+button[type="submit"] {
+	background-color: rgb(8, 96, 173);
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button[type="submit"]:hover {
+	background-color: rgb(72, 124, 170);
+}
+
+#error-message {
+	color: #ff0000;
+	margin-top: 10px;
 }
