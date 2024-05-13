@@ -15,3 +15,5 @@ loginForm.addEventListener('submit', (e) => {
 		errorMessage.textContent = 'Usuario o contraseña incorrecta';
 	}
 });
+
+// Haz que cuando se valide el acceso, te dirija automaticamente a SeleccionArea.html

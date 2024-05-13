@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar coordinadores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div class="form d-flex flex-column mx-auto justify-content-center align-items-center vh-100">
+        <div class="text">
+            <h1 class="display-1 mb-5"><strong>Registro de Votantes</strong></h1>
+        </div>
+        <form>
+            <div class="mb-3">
+                <h4 class="h4">Cédula del Votante</h4>
+                <input class="form-control" type="text" placeholder="00000000000" aria-label="default input example" id="cedulaInput">
+            </div>
+
+            <div class="mb-3">
+                <h4 class="h4">Nombre Completo del Votante</h4>
+                <input class="form-control" type="text" placeholder="Hendrix Samuel Diaz Quevedo" aria-label="default input example" id="nombreInput">
+            </div>
+
+            <div class="mb-3">
+                <h4 class="h4">Municipio del Votante</h4>
+                <select class="form-select form-select-sm" aria-label="Small select example">
+                    <option selected>Selecciona el municipio</option>
+                    <option value="1">Municipio 1</option>
+                    <option value="2">Municipio 2</option>
+                    <option value="3">Municipio 3</option>
+                  </select>
+            </div>
+
+            <div class="mb-3">
+                <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                    <option selected>¿Votó?</option>
+                    <option value="1">Sí</option>
+                    <option value="2">No</option>
+                  </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mb-3">Registrar</button>
+
+            <!-- Favor colocar SweepAlert si se guardó correctamente el votante en la base de datos! -->
+
+            <a href="SeleccionArea.html">
+                <button type="button" class="btn btn-outline-danger w-100">VOLVER A SELECCIÓN DE AREA</button>
+              </a>
+
+          </form>
+    </div>
+</body>
+</html>
