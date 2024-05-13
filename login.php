@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
+<?php include 'config/conx.php'; ?>
 	<div class="login-box">
 		<h2>Iniciar Sesión</h2>
 		<form id="loginForm">
