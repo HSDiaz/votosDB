@@ -1,6 +1,6 @@
 <?php
 $servername = "127.0.0.1";
-$username = "enmanuel";
+$username = "enmannuel";
 $password = "s-e5C4haL4re3fR";
 $database = "votos";
 

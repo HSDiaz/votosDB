@@ -1,3 +1,35 @@
+<?php
+// Verificar si se ha enviado el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Incluir el archivo de conexión a la base de datos
+    include 'config/conx.php';
+
+    // Obtener los datos del formulario
+    $nombre = $_POST['nombre'];
+    $cedula = $_POST['cedula'];
+    $celular = $_POST['celular'];
+    $provincia = $_POST['provincia'];
+    $municipio = $_POST['municipio'];
+    $tipo_coordinador = $_POST['tipo_coordinador'];
+    $contrasena = $_POST['contrasena'];
+    $cantidad_votos = $_POST['cantidad_votos'];
+
+    // Query para insertar los datos en la tabla coordinadores
+    $sql = "INSERT INTO coordinadores (nombre, cedula, celular, provincia, municipio, tipo_coordinador, contrasena, cantidad_votos) 
+            VALUES ('$nombre', '$cedula', '$celular', '$provincia', '$municipio', '$tipo_coordinador', '$contrasena', $cantidad_votos)";
+
+    // Ejecutar la consulta
+    if (mysqli_query($conn, $sql)) {
+        echo "Coordinador creado exitosamente.";
+    } else {
+        echo "Error al crear el coordinador: " . mysqli_error($conn);
+    }
+
+    // Cerrar la conexión a la base de datos
+    mysqli_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +54,12 @@
     </style>
 </head>
 <body>
-    <?php include 'layout/header.php'; ?> <!-- Incluir el encabezado del layout -->
-    <?php include 'sql/guardarcoordinador.php'; ?>
+    <?php 
+    
+    include 'layout/header.php';
+    include 'sql/guardarcoordinador.php';
+    
+    ?>
 
     <div class="container">
         <h2>Crear Coordinador</h2>
@@ -70,7 +106,7 @@
                 <label for="cantidad_votos">Cantidad de Personas Previstas a Votar:</label>
                 <input type="number" class="form-control" id="cantidad_votos" name="cantidad_votos" required>
             </div>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary" name="guardar">Guardar</button>
         </form>
         <a href="login.php">
             <button class="btn btn-danger">Regresar</button>

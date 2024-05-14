@@ -1,32 +1,31 @@
 <?php
+// Verificar si se recibieron los datos del formulario
+if(isset($_POST['guardar'])) {
+    // Incluir el archivo de conexión a la base de datos
+    include 'conexion.php';
+    
+    // Recibir y sanitizar los datos del formulario
+    $nombre = mysqli_real_escape_string($conn, $_POST['nombre']);
+    $cedula = mysqli_real_escape_string($conn, $_POST['cedula']);
+    $celular = mysqli_real_escape_string($conn, $_POST['celular']);
+    $provincia = mysqli_real_escape_string($conn, $_POST['provincia']);
+    $municipio = mysqli_real_escape_string($conn, $_POST['municipio']);
+    $tipo_coordinador = mysqli_real_escape_string($conn, $_POST['tipo_coordinador']);
+    $contrasena = mysqli_real_escape_string($conn, $_POST['contrasena']);
+    $cantidad_votos = mysqli_real_escape_string($conn, $_POST['cantidad_votos']);
+    
+    // Consulta SQL para insertar los datos en la tabla coordinadores
+    $sql = "INSERT INTO coordinadores (cedula, nombre, celular, provincia, municipio, cantidad_votos, tipo_coordinador, contrasena) 
+            VALUES ('$cedula', '$nombre', '$celular', '$provincia', '$municipio', '$cantidad_votos', '$tipo_coordinador', '$contrasena')";
 
-    // Incluir la conexión a la base de datos
-    include '.\config\conx.php'; // Asegúrate de que el archivo de conexión esté correctamente configurado
-// Verificar si se enviaron datos por el formulario
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    // Recoger los datos del formulario
-    $nombre = $_POST['nombre'];
-    $cedula = $_POST['cedula'];
-    $celular = $_POST['celular'];
-    $provincia = $_POST['provincia'];
-    $municipio = $_POST['municipio'];
-    $tipo_coordinador = $_POST['tipo_coordinador'];
-    $contrasena = $_POST['contrasena'];
-    $cantidad_votos = $_POST['cantidad_votos'];
-
-    // Preparar la consulta SQL para insertar los datos
-    $sql = "INSERT INTO coordinadores (nombre, cedula, celular, provincia, municipio, tipo_coordinador, contrasena, cantidad_votos) 
-            VALUES ('$nombre', '$cedula', '$celular', '$provincia', '$municipio', '$tipo_coordinador', '$contrasena', '$cantidad_votos')";
-
-    // Ejecutar la consulta y verificar si fue exitosa
-    if ($conexion->query($sql) === TRUE) {
-        echo "Los datos del coordinador se han guardado exitosamente.";
+    // Ejecutar la consulta
+    if($conn->query($sql) === TRUE) {
+        echo "Registro creado satisfactoriamente.";
     } else {
-        echo "Error al guardar los datos del coordinador: " . $conexion->error;
+        echo "Error al crear el registro: " . $conn->error;
     }
 
-    // Cerrar la conexión a la base de datos
-    $conexion->close();
+    // Cerrar la conexión
+    $conn->close();
 }
 ?>

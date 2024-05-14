@@ -11,7 +11,6 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#coordinatorForm').submit(function(event) {
-        event.preventDefault(); // Evita que se recargue la página al enviar el formulario
 
         // Obtener los valores del formulario
         var nombre = $('#nombre').val();
